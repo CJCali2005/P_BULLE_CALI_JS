@@ -48,5 +48,5 @@ export function isGeneratorReady(currentEnergy) {
  */
 export function generatorStatus(name, currentEnergy) {
   
-  return name + " possède " + currentEnergy + " unités d'énergie.";
+  return `${name} possède ${currentEnergy} unités d'énergie.`
 }

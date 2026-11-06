@@ -4,21 +4,28 @@
  * Convertit un relevé en nombre.
  */
 export function readRainfall(value) {
-  // TODO
+  return Number(value);
 }
 
 /**
  * Additionne deux relevés après les avoir convertis en nombres.
+ * @param {*} morning 
+ * @param {*} evening 
+ * @returns retourne la somme des relevés de la journée
  */
 export function totalRainfall(morning, evening) {
-  // TODO
+  return Number(morning) + Number(evening);
 }
 
 /**
  * Indique si l'heure correspond à un relevé automatique (toutes les 3 heures).
+ * @param {number} hour 
+ * @returns 
  */
 export function isScheduledHour(hour) {
-  // TODO
+  let x = hour % 3;
+
+  return hour == 0;
 }
 
 /**
