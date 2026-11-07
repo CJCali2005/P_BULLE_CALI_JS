@@ -2,6 +2,8 @@
 
 /**
  * Convertit un relevé en nombre.
+ * @param {*} value
+ * @returns {number} retourne la version number de value
  */
 export function readRainfall(value) {
   return Number(value);
@@ -20,24 +22,29 @@ export function totalRainfall(morning, evening) {
 /**
  * Indique si l'heure correspond à un relevé automatique (toutes les 3 heures).
  * @param {number} hour 
- * @returns 
+ * @returns {boolean} retourne un booléen qui confirme si c'est un multiple de 3.
  */
 export function isScheduledHour(hour) {
   let x = hour % 3;
 
-  return hour == 0;
+  return x == 0;
 }
 
 /**
  * Indique si la conversion du relevé produit NaN.
+ * @param {*} value 
+ * @returns {boolean} retourne un booléen qui comfirme que number soit identique.
  */
 export function isFaultyReading(value) {
-  // TODO
+  return value != Number(value);
 }
 
 /**
  * Compare strictement deux relevés après conversion en nombres.
+ * @param {*} manual 
+ * @param {*} automatic 
+ * @returns {boolean} confirme que le relevé automatique sois strictement identique au manuel.
  */
 export function isConfirmedReading(manual, automatic) {
-  // TODO
+  return Number(manual) === Number(automatic);
 }
