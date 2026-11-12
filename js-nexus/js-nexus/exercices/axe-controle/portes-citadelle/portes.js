@@ -2,28 +2,75 @@
 
 /**
  * Retourne le message d'accès correspondant au niveau.
+ * @param {number} level 
+ * @returns {string} Retourne le message d'accès correspondant au niveau
  */
 export function accessMessage(level) {
-  // TODO
+  if(level >= 5){
+    return "Accès autorisé";
+  }
+  else{
+    return "Accès refusé";
+  }
 }
 
 /**
- * Retourne l'état textuel d'une porte.
+ * Indiquer l'état d'une porte
+ * @param {Boolean} isOpen 
+ * @returns {string} Retourne l'état de la porte
  */
 export function doorStatus(isOpen) {
-  // TODO
+  if(isOpen == true){
+    return "Ouverte";
+  }
+  else{
+    return "Fermée";
+  }
 }
 
 /**
  * Retourne le nom de la zone correspondant à un code.
+ * @param {*} code 
+ * @returns Retourne le nom de la zone correspondant à un code.
  */
 export function zoneName(code) {
-  // TODO
+  switch(code)
+  {
+    case code = "N":
+      return "Les Fondations";
+      break;
+    
+    case code = "E":
+      return "Les Archives";
+      break;
+    
+    case code = "SE":
+      return "La Forge";
+      break;
+
+    case code = "SO":
+      return "La Citadelle";
+      break;
+
+    case code = "O":
+      return "La Faille";
+      break;
+
+    default:
+      return "Zone inconnue";
+      break;
+  }
 }
 
 /**
  * Détermine le niveau d'alerte selon l'énergie disponible.
+ * @param {number} energy 
+ * @returns ça retourne le texte équivalent à son niveau.
  */
 export function alertLevel(energy) {
-  // TODO
+  if(energy < 20) return "CRITIQUE";
+  else if( energy >= 20 && energy <= 49) return "FAIBLE";
+  else if( energy >= 50 && energy <= 79) return "STABLE";
+  else if( energy >= 80 ) return "OPTIMAL";
+
 }
