@@ -2,23 +2,52 @@
 
 /**
  * Valide une quantité d'énergie.
+ * @param {*} energy 
+ * @returns 
  */
 export function validateEnergy(energy) {
-  // TODO
+  if(energy < 0) throw new Error("Énergie invalide");
+  else return energy;
 }
 
 /**
  * Vérifie une énergie sans propager l'exception.
  */
 export function safeEnergyCheck(energy) {
-  // TODO
+  try{
+    validateEnergy(energy);
+    return "Énergie valide";
+  }
+  catch(error){
+    return "Énergie invalide";
+  }
 }
 
 /**
  * Valide un code de porte autorisé.
  */
 export function validateGateCode(code) {
-  // TODO
+  let result = "";
+
+  try{
+
+    switch(code){
+      case "ALPHA": 
+      case "BETA": 
+      case "OMEGA":
+        result = code;
+        break;
+
+      default:
+         throw new Error("Code inconnu");
+         break;
+    }
+  }
+  catch(error){
+    return "Code inconnu";
+  }
+
+  return result;
 }
 
 /**
