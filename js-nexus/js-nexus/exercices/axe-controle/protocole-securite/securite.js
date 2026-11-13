@@ -27,27 +27,16 @@ export function safeEnergyCheck(energy) {
  * Valide un code de porte autorisé.
  */
 export function validateGateCode(code) {
-  let result = "";
-
-  try{
 
     switch(code){
       case "ALPHA": 
       case "BETA": 
       case "OMEGA":
-        result = code;
-        break;
-
+        return code;
       default:
          throw new Error("Code inconnu");
-         break;
     }
-  }
-  catch(error){
-    return "Code inconnu";
-  }
-
-  return result;
+  
 }
 
 /**
